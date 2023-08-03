@@ -431,7 +431,7 @@ get_compose_version() {
 # check that the installed version of docker-compose is new enough.
 check_compose_version() {
     local min_version installed_version version_string
-    version_string=$(get_compose_version)
+    version_string=$(docker compose version --short)
 
     if [[ "${version_string}" != "" ]]; then
         local IFS=.
